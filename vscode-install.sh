@@ -36,21 +36,21 @@ function preConfigurarDependenciasDoVSCode(){
     apt update -y
     apt install wget gpg -y
 
-    # 
+    # Getting GPG key
     wget -qO- ${MICROSOFT_PACKAGE_URL}/keys/microsoft.asc | gpg --dearmor > $GPG_PACKAGE
 
-    #
+    # Copy GPG key to selected directory
     install -o root -g root -m 644 $GPG_PACKAGE ${GPG_KEY_DIRECTORY}/
 
-    #
+    # Insert Microsoft repository in the given path
     sh -c `echo "deb [arch=amd64,arm64,armhf signed-by=$GPG_KEY_DIRECTORY/$GPG_PACKAGE] $MICROSOFT_PACKAGE_URL/repos/code stable main" > /etc/apt/sources.list.d/vscode.list`
 
-    #
+    # Remove GPG key
     rm -f $GPG_PACKAGE
 }
 
 function instalarVersaoMaisRecenteDoVSCode(){
-    #
+    # Install VS Code
     apt update -y
     apt install code -y
 }

@@ -38,7 +38,7 @@ function preConfigurarDependenciasDoGit(){
 }
 
 function instalarVersaoMaisRecenteDoGit(){
-    #
+    # Install Git latest version
     apt update -y
     apt install git -y
 }

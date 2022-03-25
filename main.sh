@@ -4,7 +4,7 @@
 # Creation date: 24/03/2022
 # E-mail: lucasmoraessilva01@gmail.com
 # Description: This script performs the minimum configuration required for a working environment on an Ubuntu distribution.
-# Use example: ./main.sh
+# Use example: sudo ./main.sh
 
 # Imports
 # ---------------------------------
@@ -15,5 +15,16 @@
 # Functions
 # ---------------------------------
 
+function main(){
+    ./docker-install.sh
+    ./git-install.sh
+    ./git-flow-install.sh
+    ./python-install.sh
+    ./terminator-install.sh
+    ./vscode-install.sh
+}
+
 # Execution
 # ---------------------------------
+
+main

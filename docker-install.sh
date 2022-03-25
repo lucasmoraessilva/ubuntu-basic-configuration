@@ -42,7 +42,7 @@ function preConfigurarDependenciasDoDocker(){
 }
 
 function instalarVersaoMaisRecenteDoDocker(){
-    # install Docker latest version
+    # Install Docker latest version
     apt update -y
     apt install docker-ce docker-ce-cli containerd.io -y
 }
