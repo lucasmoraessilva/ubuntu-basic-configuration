@@ -23,8 +23,8 @@ function main(){
 
 function removerVersoesAntigasDoPython(){
     # Remove old versions of Python
-    apt remove --auto-remove -y python3*
-    apt purge --auto-remove -y python3*
+    apt remove --auto-remove -y python3.10
+    apt purge --auto-remove -y python3.10
 }
 
 function preConfigurarDependenciasDoPython(){

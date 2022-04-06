@@ -24,7 +24,8 @@ function main(){
 function desinstalarVersoesAntigasDoGit(){
     # Removing installed versions
     apt update -y
-    apt remove git* -y
+    apt remove --auto-remove git -y
+    apt purge --auto-remove git -y
 }
 
 function preConfigurarDependenciasDoGit(){
@@ -33,7 +34,7 @@ function preConfigurarDependenciasDoGit(){
     apt install software-properties-common -y
 
     # Adding PPA for Git installation
-    add-apt-repository ppa:git-core/ppa
+    add-apt-repository -y ppa:git-core/ppa
     apt update -y
 }
 
